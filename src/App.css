@@ -79,3 +79,80 @@ a.link-block > img.arrow-down {
   width: 3vw;
   position: absolute;
 }
+
+a.link-block > img.looping-circle {
+  animation: loop 8s linear 1s infinite normal;
+}
+
+@keyframes loop {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.marquee-wrapper.homepage {
+  margin-top: 12vh;
+  margin-bottom: 12vh;
+}
+
+.marquee {
+  grid-column-gap: 2rem;
+  grid-row-gap: 2rem;
+  align-items: stretch;
+  display: flex;
+  overflow: hidden;
+}
+
+@media screen and (min-width: 1440px) {
+  .marquee,
+  .marquee-content.scroll,
+  .marquee-content.scroll-image {
+    grid-column-gap: 1.5rem;
+    grid-row-gap: 1.5rem;
+  }
+}
+
+.scroll {
+  display: flex;
+  animation: scroll 30s linear infinite;
+  width: max-content;
+}
+
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(calc(-100% - 1rem));
+  }
+}
+
+.marquee-content {
+  min-width: 100%;
+  grid-column-gap: 1rem;
+  grid-row-gap: 1rem;
+  flex: none;
+  justify-content: space-around;
+  align-items: center;
+  display: flex;
+}
+
+.half-circle-diamond {
+  width: 15vw;
+}
+
+.positive-dome {
+  width: 11vw;
+}
+
+.snake-icon {
+  width: 16vw;
+}
+
+.shooting-star-icon {
+  width: 12vw;
+}

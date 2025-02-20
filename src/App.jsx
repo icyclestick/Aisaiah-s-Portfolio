@@ -1,8 +1,13 @@
+import { NavBar } from './components/NavBar';
 import './App.css'
 import completeArch from "./assets/complete-arch-final.svg"
 import shootingStar from "./assets/shooting-star.svg"
 import loopingCircle from "./assets/looping-projects.svg"
 import arrowDown from "./assets/arrow-down-projects.svg"
+import halfCircleDiamond from "./assets/half-circle-diamond.svg"
+import positiveDome from "./assets/half-arch-positive.svg"
+import snakeIcon from "./assets/snake-negative.svg"
+import { Marquee } from './components/Marquee';
 
 
 function App() {
@@ -21,23 +26,9 @@ function App() {
         </div>
       </section>
 
-
+      <Marquee halfCircleDiamond={halfCircleDiamond} positiveDome={positiveDome} snakeIcon={snakeIcon} shootingStar={shootingStar} />
     </>
   )
 }
 
 export default App
-
-function NavBar({ shootingStar }) {
-  return (
-    <header className="navbar">
-      <a href="/" className="shooting-star-logo">
-        <img src={shootingStar} alt="Shooting Star Logo" className="shooting-star" />
-      </a>
-      <nav className="nav-menu">
-        <a href="/" className="nav-link">Index</a>
-        <a href="/about" className="nav-link">About</a>
-        <a href="/contact" className="nav-link">Contact</a>
-      </nav>
-    </header>);
-}
