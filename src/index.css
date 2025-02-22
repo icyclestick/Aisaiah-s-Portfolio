@@ -32,9 +32,11 @@ a:hover {
 }
 
 img {
+  width: auto;
   max-width: 100%;
   min-width: auto;
   display: inline-block;
+  vertical-align: middle;
   border: 0;
 }
 
@@ -58,4 +60,15 @@ h4 {
   line-height: 100%;
   display: inline-block;
   font-weight: 200;
+}
+
+.w-inline-block {
+  max-width: 100%;
+  display: inline-block;
+}
+
+.w-container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
 }

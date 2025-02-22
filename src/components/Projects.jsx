@@ -23,7 +23,7 @@ const projectData = [
     { title: "Static Pages", image: staticPage, tags: ["React", "UI/UX"] },
 ];
 
-const ProjectItem = ({ title, image, tags }) => {
+const ProjectItem = ({ index, title, image, tags }) => {
     const [isHovered, setIsHovered] = useState(false);
 
     console.log(image)
@@ -36,7 +36,7 @@ const ProjectItem = ({ title, image, tags }) => {
             onMouseLeave={() => setIsHovered(false)}
         >
             <h3 className="title-large">
-                <span className="text-span-8">•</span> {title}
+                <span className="text-span-8">{index}</span> {title}
             </h3>
             <div className="discipline-tags">
                 {tags.map((tag, index) => (
@@ -55,6 +55,7 @@ const ProjectItem = ({ title, image, tags }) => {
 };
 
 ProjectItem.propTypes = {
+    index: PropTypes.number.isRequired,
     title: PropTypes.string.isRequired,
     image: PropTypes.string.isRequired,
     tags: PropTypes.arrayOf(PropTypes.string).isRequired,
@@ -66,7 +67,7 @@ function Projects() {
             <h4 id="case-studies" className="eyebrow">projects</h4>
             <div className="projects-container">
                 {projectData.map((project, index) => (
-                    <ProjectItem key={index} {...project} />
+                    <ProjectItem key={index} index={index + 1}{...project} />
                 ))}
             </div>
         </section>
