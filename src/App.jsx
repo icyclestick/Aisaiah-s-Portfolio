@@ -7,7 +7,9 @@ import arrowDown from "./assets/arrow-down-projects.svg"
 import halfCircleDiamond from "./assets/half-circle-diamond.svg"
 import positiveDome from "./assets/half-arch-positive.svg"
 import snakeIcon from "./assets/snake-negative.svg"
+import extraSun from './assets/extra-sun.svg'
 import { Marquee } from './components/Marquee';
+import Projects from './components/Projects'
 
 
 function App() {
@@ -27,6 +29,14 @@ function App() {
       </section>
 
       <Marquee halfCircleDiamond={halfCircleDiamond} positiveDome={positiveDome} snakeIcon={snakeIcon} shootingStar={shootingStar} />
+      <Projects />
+
+      <section className="extra-container-static">
+        <a href="" className="link-block-2 w-inline-block">
+          <img src={extraSun} loading="lazy" alt="extra-sun" className="extra-extra static" />
+        </a>
+      </section>
+
     </>
   )
 }

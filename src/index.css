@@ -27,11 +27,25 @@ a {
   text-decoration: none;
 }
 
+a:hover {
+  outline: 0;
+}
+
 img {
   max-width: 100%;
   min-width: auto;
   display: inline-block;
   border: 0;
+}
+
+h4 {
+  display: block;
+  margin-block-start: 1.33em;
+  margin-block-end: 1.33em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+  font-weight: bold;
+  unicode-bidi: isolate;
 }
 
 .extra-large-display {

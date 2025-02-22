@@ -10,6 +10,15 @@ const propTypes = {
     snakeIcon: PropTypes.string.isRequired,
     shootingStar: PropTypes.string.isRequired,
   },
+  Images: {
+    dietCock: PropTypes.string.isRequired,
+    assembly: PropTypes.string.isRequired,
+    tenzies: PropTypes.string.isRequired,
+    chefClaude: PropTypes.string.isRequired,
+    meme: PropTypes.string.isRequired,
+    travelJournal: PropTypes.string.isRequired,
+    staticPage: PropTypes.string.isRequired,
+  },
 };
 
 export default propTypes;
