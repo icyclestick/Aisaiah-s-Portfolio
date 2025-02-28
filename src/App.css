@@ -464,3 +464,63 @@ img.looping-shape {
   border: 0.5px solid var(--blue-blue);
   transition: transform 0.2s ease-out, opacity 0.2s ease-out;
 }
+
+.about-hero {
+  height: auto;
+  padding-top: 20vw;
+  padding-left: 6vw;
+  padding-right: 6vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+@media screen and (min-width: 1440px) {
+  .display-medium {
+    font-size: 5vw;
+  }
+}
+
+.display-medium {
+  color: var(--blue-blue);
+  white-space: nowrap;
+  margin-top: 0;
+  margin-bottom: 0;
+  font-family: neue-haas-grotesk-display, sans-serif;
+  font-size: 5.5vw;
+  font-weight: 400;
+  line-height: 100%;
+  display: inline-block;
+}
+
+.display-large-alt_wrap {
+  letter-spacing: 0;
+  padding-right: 0.35em;
+  font-family: Xanh Mono, sans-serif;
+}
+
+.display-medium-alt.about {
+  padding-top: 2vh;
+  font-style: italic;
+}
+
+@media screen and (min-width: 1440px) {
+  .display-medium-alt {
+    font-family: Xanh Mono, sans-serif;
+    font-size: 5vw;
+    font-style: italic;
+  }
+}
+
+.display-medium-alt {
+  color: var(--blue-blue);
+  white-space: nowrap;
+  margin-top: 0;
+  margin-bottom: 0;
+  font-family: Xanh Mono, sans-serif;
+  font-size: 5vw;
+  font-weight: 400;
+  line-height: 100%;
+  display: inline-block;
+}

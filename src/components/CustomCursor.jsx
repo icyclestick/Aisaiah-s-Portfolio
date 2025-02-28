@@ -64,8 +64,8 @@ export default function CustomCursor() {
             <motion.div
                 className="large-cursor"
                 animate={{
-                    x: mousePosition.x - 20,
-                    y: mousePosition.y - 20,
+                    x: mousePosition.x - 22,
+                    y: mousePosition.y - 22,
                     scale: isHovered ? 5 : 1,
                     borderRadius: isHovered ? "50%" : "0%",
                 }}

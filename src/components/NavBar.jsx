@@ -1,6 +1,6 @@
-export function NavBar({
-    shootingStar
-}) {
+import shootingStar from "../assets/shooting-star.svg"
+
+export function NavBar() {
     return <header className="navbar">
         <a href="/" className="shooting-star-logo">
             <img src={shootingStar} alt="Shooting Star Logo" className="shooting-star" />
