@@ -11,14 +11,15 @@ import extraSun from './assets/extra-sun.svg'
 import { Marquee } from './components/Marquee';
 import Projects from './components/Projects'
 import lightRay from './assets/light-ray.svg'
+import CustomCursor from './components/CustomCursor';
 
 
 function App() {
 
+
   return (
     <>
       <NavBar shootingStar={shootingStar} />
-
       <section className='homepage-hero'>
         <img src={completeArch} alt="dome" className="complete-arch" />
         <div className="looping-projects">
@@ -61,6 +62,7 @@ function App() {
         <img src={positiveDome} loading="lazy" alt="" className="positive-dome" />
       </div>
 
+      <CustomCursor />
     </>
   )
 }

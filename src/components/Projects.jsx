@@ -23,10 +23,9 @@ const projectData = [
     { title: "Static Pages", image: staticPage, tags: ["React", "UI/UX"] },
 ];
 
-const ProjectItem = ({ index, title, image, tags }) => {
-    const [isHovered, setIsHovered] = useState(false);
+const ProjectItem = ({ index, title, image, tags, }) => {
 
-    console.log(image)
+    const [isHovered, setIsHovered] = useState(false);
 
     return (
         <a
@@ -59,7 +58,10 @@ ProjectItem.propTypes = {
     title: PropTypes.string.isRequired,
     image: PropTypes.string.isRequired,
     tags: PropTypes.arrayOf(PropTypes.string).isRequired,
+    isHovered: PropTypes.oneOfType([PropTypes.number, PropTypes.null]),
 };
+
+
 
 function Projects() {
     return (
@@ -73,5 +75,7 @@ function Projects() {
         </section>
     );
 }
+
+
 
 export default Projects;
