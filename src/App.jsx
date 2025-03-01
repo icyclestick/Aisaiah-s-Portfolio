@@ -17,10 +17,6 @@ import { CustomCursor } from "./components/CustomCursor";
 
 function App() {
 
-  const scrollToTop = () => {
-    window.scrollTo({ top: 0, behavior: "smooth" });
-  };
-
   return (
     <>
       <NavBar shootingStar={shootingStar} />
@@ -47,7 +43,7 @@ function App() {
       <Projects />
 
       <section className="extra-container-static w-container">
-        <button onClick={scrollToTop} className="link-block-2 w-inline-block">
+        <a href="https://open.spotify.com/playlist/37i9dQZF1DWWY64wDtewQt?si=0uVh1HtLSQeZMirWgX5Wlw" className="link-block-2 w-inline-block">
           CLICK ME!
           <img
             src={extraSun}
@@ -55,7 +51,7 @@ function App() {
             alt="extra-sun"
             className="extra-extra static"
           />
-        </button>
+        </a>
       </section>
 
       <Footer lightRay={lightRay} />
