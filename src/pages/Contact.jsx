@@ -38,11 +38,11 @@ export function Contact() {
                     </div>
                 </div>
                 <div className="light-ray-link">
-                    <a href="" className="link-block  w-inline-block">
+                    <a href="mailto:aisaiahalidio@gmail.com?subject=Contact%20from%20Portfolio&body=Hello" className="link-block  w-inline-block">
                         <div className="eyebrow contact-button">email</div>
                         <img src={lightRay} loading="lazy" alt="" className="looping-shape copy-circle -links"></img>
                     </a>
-                    <a href="" className="link-block  w-inline-block">
+                    <a href="https://www.linkedin.com/in/aisaiah-francis-alidio-a35492297/" className="link-block  w-inline-block">
                         <div className="eyebrow contact-button">linkedin</div>
                         <img src={lightRay} loading="lazy" alt="" className="looping-shape copy-circle footer-links"></img>
                     </a>
