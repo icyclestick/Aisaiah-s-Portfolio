@@ -2,7 +2,6 @@ import { NavBar } from "../components/NavBar";
 import { LargeFooter } from "../components/LargeFooter";
 import { CustomCursor } from "../components/CustomCursor";
 import lightRay from "../assets/light-ray.svg";
-import positiveDome from "../assets/half-arch-positive.svg";
 import { useState, useEffect } from "react";
 
 export function Contact() {
@@ -50,6 +49,7 @@ export function Contact() {
                 </div>
             </section>
             <LargeFooter />
+            <CustomCursor />
         </>
     );
 }
