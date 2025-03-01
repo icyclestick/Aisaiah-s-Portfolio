@@ -16,6 +16,11 @@ import lightRay from "./assets/light-ray.svg";
 import { CustomCursor } from "./components/CustomCursor";
 
 function App() {
+
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
+
   return (
     <>
       <NavBar shootingStar={shootingStar} />
@@ -42,7 +47,7 @@ function App() {
       <Projects />
 
       <section className="extra-container-static w-container">
-        <a href="" className="link-block-2 w-inline-block">
+        <button onClick={scrollToTop} className="link-block-2 w-inline-block">
           CLICK ME!
           <img
             src={extraSun}
@@ -50,7 +55,7 @@ function App() {
             alt="extra-sun"
             className="extra-extra static"
           />
-        </a>
+        </button>
       </section>
 
       <Footer lightRay={lightRay} />
