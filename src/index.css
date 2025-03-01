@@ -13,8 +13,8 @@ body {
   color: #333;
   background-color: var(--offwhite);
   padding-left: 0;
+  font-family: "Neue Haas Grotesk Display Pro", Arial, sans-serif !important;
   cursor: none;
-  font-family: Arial, Helvetica Neue, Helvetica, sans-serif;
   font-size: 14px;
   line-height: 20px;
   overflow-x: hidden;

@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 
-export default function CustomCursor() {
+export function CustomCursor() {
     const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
     const [isHovered, setIsHovered] = useState(false);
     const [isProjectHovered, setIsProjectHovered] = useState(false);

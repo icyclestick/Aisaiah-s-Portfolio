@@ -45,6 +45,10 @@ header > nav > .nav-link {
   display: flex;
 }
 
+.nav-link:hover {
+  font-family: "Xanh Mono", monospace;
+}
+
 section.homepage-hero {
   height: 100vh;
   flex-direction: column;
@@ -347,13 +351,13 @@ user agent stylesheet img {
   display: flex;
 }
 
-.body-copy-large {
+.body-copy-large.about {
   color: var(--blue-blue);
   letter-spacing: 0.05em;
   white-space: normal;
-  font-family: neue-haas-grotesk-display, sans-serif;
+  font-family: "Neue Haas Grotesk Display Pro", sans-serif;
   font-size: 18px;
-  font-weight: 300;
+  font-weight: 400;
   line-height: 120%;
 }
 
@@ -362,7 +366,7 @@ user agent stylesheet img {
   letter-spacing: 0.025em;
   white-space: normal;
   margin-bottom: 3vh;
-  font-family: Xanh Mono, sans-serif;
+  font-family: "Xanh Mono", sans-serif;
   font-size: 18px;
   font-style: italic;
   font-weight: 400;
@@ -494,9 +498,18 @@ img.looping-shape {
   display: inline-block;
 }
 
+.about-content-block {
+  flex-direction: column;
+  align-items: center;
+  padding: 12vh 15vw 10vh;
+  display: flex;
+  position: relative;
+}
+
 .display-large-alt_wrap {
   letter-spacing: 0;
-  padding-right: 0.35em;
+  padding-left: 0.25em;
+  padding-right: 0.5em;
   font-family: Xanh Mono, sans-serif;
 }
 
@@ -523,4 +536,151 @@ img.looping-shape {
   font-weight: 400;
   line-height: 100%;
   display: inline-block;
+}
+
+.about-block {
+  grid-column-gap: 20px;
+  grid-row-gap: 20px;
+  flex-direction: column;
+  display: flex;
+}
+
+.body-copy-large {
+  color: var(--blue-blue);
+  letter-spacing: 0.05em;
+  white-space: normal;
+  font-family: neue-haas-grotesk-display, sans-serif;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 120%;
+}
+
+.body-copy-large-alt.no-padding {
+  margin-bottom: 0;
+}
+@media screen and (min-width: 1440px) {
+  .no-padding {
+    display: block;
+  }
+}
+
+.body-copy-large-alt {
+  color: var(--blue-blue);
+  letter-spacing: 0.025em;
+  white-space: normal;
+  margin-bottom: 3vh;
+  font-family: Xanh Mono, sans-serif;
+  font-size: 18px;
+  font-style: italic;
+  font-weight: 400;
+  line-height: 120%;
+}
+
+.no-padding {
+  z-index: 1;
+  width: 100%;
+  min-width: 100%;
+  border: 0px solid var(--blue-blue);
+  flex: 0 auto;
+  align-self: auto;
+  display: block;
+  position: relative;
+}
+
+.looping-starflower-container {
+  z-index: 2;
+  max-width: 75vw;
+  position: absolute;
+  top: -3%;
+  bottom: auto;
+  left: 6%;
+  right: auto;
+}
+
+.snake-container {
+  z-index: 2;
+  max-width: 75vw;
+  position: absolute;
+  top: 8%;
+  bottom: auto;
+  left: auto;
+  right: 3%;
+  transform: rotate(20deg);
+}
+
+.portrait {
+  width: 15rem;
+  height: 15rem;
+  margin: auto;
+  transition: filter 0.4s cubic-bezier(0.445, 0.05, 0.55, 0.95);
+}
+
+.portrait:hover {
+  filter: blur(4px);
+}
+
+.contact-hero {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-size: 24px;
+  font-weight: bold;
+  flex-direction: column;
+  margin-bottom: 0;
+}
+
+.contact-display {
+  color: var(--blue-blue);
+  padding-left: 8rem;
+  white-space: nowrap;
+  font-family: "Neue Haas Grotesk Display Pro", sans-serif;
+  font-size: 5vw;
+  font-weight: 200;
+  display: flex;
+  align-items: center;
+  text-align: left;
+  margin-top: 20rem;
+}
+
+.rotating-text-wrapper {
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  height: 2em;
+  min-width: 12ch;
+  overflow: hidden;
+}
+
+.rotating-text {
+  font-family: "Xanh Mono", sans-serif;
+  display: inline-block;
+  transition: opacity 0.5s ease, transform 0.5s ease;
+  opacity: 1;
+  white-space: nowrap;
+  text-align: left; /* 👈 Keeps the text aligned */
+}
+
+/* Optional: Add animation for entry effect */
+.rotating-text {
+  animation: fadeInUp 0.5s ease-in-out;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.light-ray-link {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 1rem;
 }

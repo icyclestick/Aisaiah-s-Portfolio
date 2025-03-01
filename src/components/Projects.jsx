@@ -58,7 +58,7 @@ ProjectItem.propTypes = {
     title: PropTypes.string.isRequired,
     image: PropTypes.string.isRequired,
     tags: PropTypes.arrayOf(PropTypes.string).isRequired,
-    isHovered: PropTypes.oneOfType([PropTypes.number, PropTypes.null]),
+    isHovered: PropTypes.bool,
 };
 
 
