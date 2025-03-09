@@ -12,24 +12,24 @@ import leedsTracker from "../assets/LeedsTracker.png";
 import PropTypes from "prop-types";
 
 const projectData = [
-    { title: "Diet Cock", image: dietCock, tags: ["MERN", "Full Stack", "React", "UI/UX"] },
-    { title: "Assembly: Endgame", image: assembly, tags: ["Game Design", "React", "UI/UX"] },
-    { title: "Tenzies", image: tenzies, tags: ["Game Design", "React", "UI/UX"] },
-    { title: "Chef Claude", image: chefClaude, tags: ["Generative AI", "API", "React", "UI/UX"] },
-    { title: "Meme Generator", image: meme, tags: ["API", "React", "UI/UX"] },
-    { title: "Travel Journal", image: travelJournal, tags: ["React", "UI/UX"] },
-    { title: "Black Jack in JavaScript", image: blackJack, tags: ["JavaScript", "Game Design", "UI/UX"] },
-    { title: "Leeds Tracker Chrome Extension", image: leedsTracker, tags: ["JavaScript", "Extensions", "UI/UX"] },
-    { title: "Static Pages", image: staticPage, tags: ["React", "UI/UX"] },
+    { title: "Diet Cock", image: dietCock, tags: ["MERN", "Full Stack", "React", "UI/UX"], link: "https://dietcock.netlify.com/" },
+    { title: "Assembly: Endgame", image: assembly, tags: ["Game Design", "React", "UI/UX"], link: "https://aisaiahsassemblyendgame.netlify.app/" },
+    { title: "Tenzies", image: tenzies, tags: ["Game Design", "React", "UI/UX"], link: "https://aisaiahstenzies.netlify.app/" },
+    { title: "Chef Claude", image: chefClaude, tags: ["Generative AI", "API", "React", "UI/UX"], link: "https://aisaiahschefclaude.netlify.app/" },
+    { title: "Meme Generator", image: meme, tags: ["API", "React", "UI/UX"], link: "https://github.com/icyclestick/Scrimba-Meme-Generator" },
+    { title: "Travel Journal", image: travelJournal, tags: ["React", "UI/UX"], link: "https://github.com/icyclestick/Travel-Journal" },
+    { title: "Black Jack in JavaScript", image: blackJack, tags: ["JavaScript", "Game Design", "UI/UX"], link: "#" },
+    { title: "Leeds Tracker Chrome Extension", image: leedsTracker, tags: ["JavaScript", "Extensions", "UI/UX"], link: "#" },
+    { title: "Static Pages", image: staticPage, tags: ["React", "UI/UX"], link: "#" },
 ];
 
-const ProjectItem = ({ index, title, image, tags, }) => {
+const ProjectItem = ({ index, title, image, tags, link, }) => {
 
     const [isHovered, setIsHovered] = useState(false);
 
     return (
         <a
-            href="#"
+            href={link}
             className="project-list-item"
             onMouseEnter={() => setIsHovered(true)}
             onMouseLeave={() => setIsHovered(false)}
@@ -58,6 +58,7 @@ ProjectItem.propTypes = {
     title: PropTypes.string.isRequired,
     image: PropTypes.string.isRequired,
     tags: PropTypes.arrayOf(PropTypes.string).isRequired,
+    link: PropTypes.string.isRequired,
     isHovered: PropTypes.bool,
 };
 
