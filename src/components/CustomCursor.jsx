@@ -2,75 +2,109 @@ import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 
 export function CustomCursor() {
-    const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
-    const [isHovered, setIsHovered] = useState(false);
-    const [isProjectHovered, setIsProjectHovered] = useState(false);
+	const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
+	const [isHovered, setIsHovered] = useState(false);
+	const [isProjectHovered, setIsProjectHovered] = useState(false);
+	const [isNavItemHovered, setIsNavItemHovered] = useState(false);
 
-    useEffect(() => {
-        const handleMouseMove = (event) => {
-            setMousePosition({
-                x: event.clientX,
-                y: event.clientY,
-            });
-        };
+	useEffect(() => {
+		const handleMouseMove = (event) => {
+			setMousePosition({
+				x: event.clientX,
+				y: event.clientY,
+			});
+		};
 
-        function handleHoverEnter() {
-            setIsHovered(true);
-        }
+		function handleHoverEnter() {
+			setIsHovered(true);
+			setIsProjectHovered(false)
+			setIsNavItemHovered(false)
+		}
 
-        function handleHoverLeave() {
-            setIsHovered(false);
-        }
+		function handleHoverLeave() {
+			setIsHovered(false);
+		}
 
-        function handleProjectEnter() {
-            setIsProjectHovered(true);
-        }
+		function handleProjectEnter() {
+			setIsHovered(false);
+			setIsProjectHovered(true)
+			setIsNavItemHovered(false)
+		}
 
-        function handleProjectLeave() {
-            setIsProjectHovered(false);
-        }
+		function handleProjectLeave() {
+			setIsProjectHovered(false);
+		}
 
-        document.addEventListener("mousemove", handleMouseMove);
+		function handleNavItemEnter() {
+			setIsHovered(false);
+			setIsProjectHovered(false)
+			setIsNavItemHovered(true)
+		}
 
-        const interactiveElements = document.querySelectorAll("a, button");
-        interactiveElements.forEach((el) => {
-            el.addEventListener("mouseenter", handleHoverEnter);
-            el.addEventListener("mouseleave", handleHoverLeave);
-        });
+		function handleNavItemLeave() {
+			setIsNavItemHovered(false);
+		}
 
-        const projectItems = document.querySelectorAll(".project-list-item");
-        projectItems.forEach((el) => {
-            el.addEventListener("mouseenter", handleProjectEnter);
-            el.addEventListener("mouseleave", handleProjectLeave);
-        });
+		document.addEventListener("mousemove", handleMouseMove);
 
-        return () => {
-            document.removeEventListener("mousemove", handleMouseMove);
-        };
-    }, []);
+		const interactiveElements = document.querySelectorAll("a, button");
+		interactiveElements.forEach((el) => {
+			el.addEventListener("mouseenter", handleHoverEnter);
+			el.addEventListener("mouseleave", handleHoverLeave);
+		});
 
-    return (
-        <div className="cursor-wrapper">
-            <motion.div
-                className="small-cursor"
-                animate={{
-                    x: mousePosition.x - 5,
-                    y: mousePosition.y - 5,
-                    backgroundColor: isProjectHovered ? "var(--offwhite)" : "var(--blue-blue)",
-                }}
-                transition={{ type: "smooth", duration: 0 }}
-            />
+		const projectItems = document.querySelectorAll(".project-list-item");
+		projectItems.forEach((el) => {
+			el.addEventListener("mouseenter", handleProjectEnter);
+			el.addEventListener("mouseleave", handleProjectLeave);
+		});
 
-            <motion.div
-                className="large-cursor"
-                animate={{
-                    x: mousePosition.x - 22,
-                    y: mousePosition.y - 22,
-                    scale: isHovered ? 5 : 1,
-                    borderRadius: isHovered ? "50%" : "0%",
-                }}
-                transition={{ type: "spring", stiffness: 100, damping: 10 }}
-            />
-        </div>
-    );
+		const navItems = document.querySelectorAll(".nav-link");
+		navItems.forEach((el) => {
+			el.addEventListener("mouseenter", handleNavItemEnter);
+			el.addEventListener("mouseleave", handleNavItemLeave);
+		})
+
+		return () => {
+			document.removeEventListener("mousemove", handleMouseMove);
+		};
+	}, []);
+
+	const getCursorSize = () => {
+		if (isProjectHovered) return 200;
+		if (isNavItemHovered) return 100;
+		if (isHovered) return 200;
+		return 40;
+	};
+
+	const cursorSize = getCursorSize();
+	const cursorOffset = cursorSize / 2;
+
+	return (
+		<div className="cursor-wrapper">
+			<motion.div
+				className="small-cursor"
+				animate={{
+					x: mousePosition.x - 5,
+					y: mousePosition.y - 5,
+					backgroundColor: isProjectHovered ? "var(--offwhite)" : "var(--blue-blue)",
+					width: isHovered || isNavItemHovered ? "2.5px" : "5px",
+					height: isHovered || isNavItemHovered ? "2.5px" : "5px"
+				}}
+				transition={{ type: "smooth", duration: 0 }}
+			/>
+
+			<motion.div
+				className="large-cursor"
+				animate={{
+					x: mousePosition.x - cursorOffset,
+					y: mousePosition.y - cursorOffset,
+					width: cursorSize,
+					height: cursorSize,
+					borderRadius: isHovered || isNavItemHovered || isProjectHovered ? "50%" : "0%",
+				}}
+				transition={{ type: "spring", stiffness: 100, damping: 10 }}
+			/>
+		</div>
+	);
 }
