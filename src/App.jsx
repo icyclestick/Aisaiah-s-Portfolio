@@ -1,3 +1,4 @@
+import { useRef } from "react";
 import { LargeFooter } from "./components/LargeFooter";
 import { Footer } from "./components/Footer";
 import { NavBar } from "./components/NavBar";
@@ -17,50 +18,54 @@ import { CustomCursor } from "./components/CustomCursor";
 
 function App() {
 
-  return (
-    <>
-      <NavBar shootingStar={shootingStar} />
-      <section className="homepage-hero">
-        <img loading="eager" src={completeArch} alt="dome" className="complete-arch" />
-        <div className="looping-projects">
-          <a href="" className="link-block">
-            <img
-              src={loopingCircle}
-              alt="projects"
-              className="looping-circle"
-            />
-            <img src={arrowDown} alt="down" className="arrow-down" />
-          </a>
-        </div>
-      </section>
+	const projectRef = useRef(null)
 
-      <Marquee
-        halfCircleDiamond={halfCircleDiamond}
-        positiveDome={positiveDome}
-        snakeIcon={snakeIcon}
-        shootingStar={shootingStar}
-      />
-      <Projects />
+	return (
+		<>
+			<NavBar shootingStar={shootingStar} />
+			<section className="homepage-hero">
+				<img loading="eager" src={completeArch} alt="dome" className="complete-arch" />
+				<div className="looping-projects">
+					<a href="#" className="link-block" onClick={(e) => { e.preventDefault(); projectRef.current?.scrollIntoView({ behavior: "smooth" }) }}>
+						<img
+							src={loopingCircle}
+							alt="projects"
+							className="looping-circle"
+						/>
+						<img src={arrowDown} alt="down" className="arrow-down" />
+					</a>
+				</div>
+			</section>
 
-      <section className="extra-container-static w-container">
-        <a href="https://open.spotify.com/playlist/37i9dQZF1DWWY64wDtewQt?si=0uVh1HtLSQeZMirWgX5Wlw" className="link-block-2 w-inline-block">
-          CLICK ME!
-          <img
-            src={extraSun}
-            loading="lazy"
-            alt="extra-sun"
-            className="extra-extra static"
-          />
-        </a>
-      </section>
+			<Marquee
+				halfCircleDiamond={halfCircleDiamond}
+				positiveDome={positiveDome}
+				snakeIcon={snakeIcon}
+				shootingStar={shootingStar}
+			/>
+			<div ref={projectRef}>
+				<Projects />
+			</div>
 
-      <Footer lightRay={lightRay} />
+			<section className="extra-container-static w-container">
+				<a href="https://open.spotify.com/playlist/37i9dQZF1DWWY64wDtewQt?si=0uVh1HtLSQeZMirWgX5Wlw" className="link-block-2 w-inline-block">
+					CLICK ME!
+					<img
+						src={extraSun}
+						loading="lazy"
+						alt="extra-sun"
+						className="extra-extra static"
+					/>
+				</a>
+			</section>
 
-      <LargeFooter positiveDome={positiveDome} />
+			<Footer lightRay={lightRay} />
 
-      <CustomCursor />
-    </>
-  );
+			<LargeFooter positiveDome={positiveDome} />
+
+			<CustomCursor />
+		</>
+	);
 }
 
 export default App;

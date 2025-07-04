@@ -85,8 +85,8 @@ export function CustomCursor() {
 			<motion.div
 				className="small-cursor"
 				animate={{
-					x: mousePosition.x - 5,
-					y: mousePosition.y - 5,
+					x: mousePosition.x - 2.75,
+					y: mousePosition.y - 2.75,
 					backgroundColor: isProjectHovered ? "var(--offwhite)" : "var(--blue-blue)",
 					width: isHovered || isNavItemHovered ? "2.5px" : "5px",
 					height: isHovered || isNavItemHovered ? "2.5px" : "5px"

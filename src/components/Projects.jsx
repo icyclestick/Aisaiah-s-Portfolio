@@ -15,9 +15,9 @@ import agos from "../assets/AGOS.png";
 import PropTypes from "prop-types";
 
 const projectData = [
-	{ title: "Diet Cock", image: dietCock, tags: ["MERN", "Full Stack", "React", "UI/UX"], link: "https://github.com/icyclestick/12STEM3-group-2" },
 	{ title: "Academeet", image: academeet, tags: ["React Native", "Full Stack", "Mobile", "UI/UX"], link: "https://github.com/icyclestick/academeet" },
 	{ title: "CondoFlow", image: condoFlow, tags: ["Next.js", "Full Stack", "Databases", "UI/UX"], link: "https://github.com/icyclestick/CondoFlow" },
+	{ title: "Diet Cock", image: dietCock, tags: ["MERN", "Full Stack", "React", "UI/UX"], link: "https://github.com/icyclestick/12STEM3-group-2" },
 	{ title: "AGOS", image: agos, tags: ["Next.js", "Full Stack", "Algorithm", "UI/UX"], link: "https://github.com/icyclestick/AGOS" },
 	{ title: "Assembly: Endgame", image: assembly, tags: ["Game Design", "React", "UI/UX"], link: "https://aisaiahsassemblyendgame.netlify.app/" },
 	{ title: "Tenzies", image: tenzies, tags: ["Game Design", "React", "UI/UX"], link: "https://aisaiahstenzies.netlify.app/" },
