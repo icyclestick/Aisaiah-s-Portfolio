@@ -25,7 +25,7 @@ const projectData = [
 	{ title: "Meme Generator", image: meme, tags: ["API", "React", "UI/UX"], link: "https://github.com/icyclestick/Scrimba-Meme-Generator" },
 	{ title: "Travel Journal", image: travelJournal, tags: ["React", "UI/UX"], link: "https://github.com/icyclestick/Travel-Journal" },
 	{ title: "Black Jack", image: blackJack, tags: ["Next.js", "Databases", "UI/UX"], link: "https://v1.scrimba.com/playlist/p3py7U7" },
-	{ title: "Leeds Extension", image: leedsTracker, tags: ["React Native", "Mobile", "UI/UX"], link: "https://github.com/icyclestick/academeet" },
+	{ title: "Leeds Extension", image: leedsTracker, tags: ["React Native", "Mobile", "UI/UX"], link: "https://github.com/icyclestick" },
 	{ title: "Static Pages", image: staticPage, tags: ["React", "UI/UX"], link: "https://github.com/icyclestick" },
 ];
 
